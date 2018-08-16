@@ -56,6 +56,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         public GameObject SearchingForPlaneUI;
 
+
         /// <summary>
         /// The rotation in degrees need to apply to model when the Andy model is placed.
         /// </summary>
@@ -80,6 +81,34 @@ namespace GoogleARCore.Examples.HelloAR
             Debug.Log("You have clicked the button!");
         }
 
+        // Load Obj code from github https://github.com/google-ar/arcore-unity-sdk/issues/144
+        //private GameObject render3DObject()
+        //{
+        //    GameObject object3D = Resources.Load(Application.persistentDataPath + "Input.obj") as GameObject;
+        //    GameObject objectInstance = Instantiate(object3D) as GameObject;
+        //    Renderer renderer = objectInstance.GetComponent<Renderer>();
+        //    renderer.enabled = true;
+        //    //renderer.material.mainTexture = Resources.Load(mType + "_texture") as Texture;
+
+        //    //Debug.Log("X -> 3D object rendered");
+
+        //    Mesh meshToCollide = objectInstance.gameObject.GetComponent<MeshFilter>().mesh;
+        //    if (!meshToCollide)
+        //    {
+        //        //Debug.Log("Mesh not assigned to collide...");
+        //        //return;
+        //    }
+        //    else
+        //    {
+        //        objectInstance.transform.gameObject.AddComponent<MeshCollider>();
+        //        objectInstance.transform.GetComponent<MeshCollider>().sharedMesh = null;
+        //        objectInstance.transform.GetComponent<MeshCollider>().sharedMesh = meshToCollide;
+        //        objectInstance.transform.GetComponent<MeshCollider>().name = "model";
+        //    }
+
+        //    return objectInstance;
+        //}
+        // ------- end github code ---------
 
 
         /// <summary>
@@ -102,6 +131,20 @@ namespace GoogleARCore.Examples.HelloAR
             // }
 
             SearchingForPlaneUI.SetActive(showSearchingUI);
+
+            // Load Obj code from github https://github.com/google-ar/arcore-unity-sdk/issues/144
+            //rendered3DObject = render3DObject();
+            //float distance = 1;
+            //rendered3DObject.transform.position = FirstPersonCamera.transform.position + FirstPersonCamera.transform.forward * distance;
+
+            //if (mAnchor == null)
+            //{
+            //    Pose pose1 = Pose.identity;
+            //    pose1.position = Frame.PointCloud.GetPoint(0);
+            //    mAnchor = Session.CreateAnchor(pose1);
+            //}
+            //rendered3DObject.transform.parent = mAnchor.transform;
+            // ------- end github code ---------
 
             // Button btn_photo = m_Photo.GetComponent<Button>();
 
@@ -133,7 +176,7 @@ namespace GoogleARCore.Examples.HelloAR
             //     else
             //     {
             //         // Instantiate Andy model at the hit pose.
-            //         var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
+                     //var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
 
             //         // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
             //         andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
