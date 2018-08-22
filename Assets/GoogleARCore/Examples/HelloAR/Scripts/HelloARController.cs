@@ -50,6 +50,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// A model to place when a raycast from a user touch hits a plane.
         /// </summary>
         public GameObject AndyAndroidPrefab;
+        public GameObject InputPrefab = null;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -67,6 +68,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// the application to avoid per-frame allocations.
         /// </summary>
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
+
+        //public static Mesh InputObj = new Mesh();
 
         /// <summary>
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
@@ -110,6 +113,12 @@ namespace GoogleARCore.Examples.HelloAR
         //}
         // ------- end github code ---------
 
+        //public void Start()
+        //{
+        //    string path = Application.persistentDataPath + "Input.obj";
+        //    Mesh InputObj = new Mesh();
+        //    InputObj = ObjImporter.ImportFile(path);
+        //}
 
         /// <summary>
         /// The Unity Update() method.
@@ -175,18 +184,27 @@ namespace GoogleARCore.Examples.HelloAR
                  }
                  else
                  {
-                     // Instantiate Andy model at the hit pose.
-                     var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
+                    // Instantiate Andy model at the hit pose.
+                    //var obj = Resources.Load("chair") as GameObject;
+                    //obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                    var InputObject = Instantiate(Resources.Load("chair"), hit.Pose.position, hit.Pose.rotation) as GameObject;
+                    InputObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+                        //string path = Application.persistentDataPath + "Input.obj";
+                        //Mesh InputObj = new Mesh();
+                        //InputObj = ObjImporter.ImportFile(path);
+                    //var InputObject = Instantiate(Application.persistentDataPath + "Input.obj"), hit.Pose.position, hit.Pose.rotation);
 
                      // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                     andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+                     //andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+                    //InputObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
                      // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
                      // world evolves.
                      var anchor = hit.Trackable.CreateAnchor(hit.Pose);
 
                      // Make Andy model a child of the anchor.
-                     andyObject.transform.parent = anchor.transform;
+                     //andyObject.transform.parent = anchor.transform;
+                    InputObject.transform.parent = anchor.transform;
                  }
              }
         }
