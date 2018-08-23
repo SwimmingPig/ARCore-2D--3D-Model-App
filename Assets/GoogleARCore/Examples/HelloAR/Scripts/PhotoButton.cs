@@ -7,9 +7,9 @@ public class PhotoButton : MonoBehaviour {
     public GameObject Cube;
 	public void click() {
         //Debug.Log("Photot button pressed");
-        //captureScreenshot();
-        //StartCoroutine(captureScreenshot());
-        Cube = OBJLoader.LoadOBJFile(Application.persistentDataPath + "Input.obj");
+        captureScreenshot();
+        StartCoroutine(captureScreenshot());
+        //Cube = OBJLoader.LoadOBJFile(Application.persistentDataPath + "Input.obj");
         //var andyObject = Instantiate(AndyAndroidPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
 
     }

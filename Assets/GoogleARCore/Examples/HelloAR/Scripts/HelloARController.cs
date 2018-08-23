@@ -155,11 +155,6 @@ namespace GoogleARCore.Examples.HelloAR
             //rendered3DObject.transform.parent = mAnchor.transform;
             // ------- end github code ---------
 
-            // Button btn_photo = m_Photo.GetComponent<Button>();
-
-            //Calls the TaskOnClick/TaskWithParameters method when you click the Button
-            // btn_photo.onClick.AddListener(TaskOnClick);
-
             // If the player has not touched the screen, we are done with this update.
              Touch touch;
              if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began)
@@ -170,7 +165,7 @@ namespace GoogleARCore.Examples.HelloAR
             // Raycast against the location the player touched to search for planes.
              TrackableHit hit;
              TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinPolygon |
-                 TrackableHitFlags.FeaturePointWithSurfaceNormal;
+             TrackableHitFlags.FeaturePointWithSurfaceNormal;
 
              if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
              {
@@ -185,13 +180,13 @@ namespace GoogleARCore.Examples.HelloAR
                  else
                  {
                     // Instantiate Andy model at the hit pose.
-                    //var obj = Resources.Load("chair") as GameObject;
-                    //obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                    string path = Application.persistentDataPath + "Input.obj";
                     var InputObject = Instantiate(Resources.Load("chair"), hit.Pose.position, hit.Pose.rotation) as GameObject;
                     InputObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-                        //string path = Application.persistentDataPath + "Input.obj";
-                        //Mesh InputObj = new Mesh();
-                        //InputObj = ObjImporter.ImportFile(path);
+                    InputObject.transform.rotation = Quaternion.Euler(0f, 0f, 270f);
+
+                    //Mesh InputObj = new Mesh();
+                    //InputObj = ObjImporter.ImportFile(path);
                     //var InputObject = Instantiate(Application.persistentDataPath + "Input.obj"), hit.Pose.position, hit.Pose.rotation);
 
                      // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
