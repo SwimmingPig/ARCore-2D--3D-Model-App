@@ -26,10 +26,10 @@ namespace GoogleARCore.Examples.HelloAR
     using UnityEngine;
     using UnityEngine.UI;
 
-#if UNITY_EDITOR
-    // Set up touch input propagation while using Instant Preview in the editor.
-    using Input = InstantPreviewInput;
-#endif
+    #if UNITY_EDITOR
+        // Set up touch input propagation while using Instant Preview in the editor.
+        using Input = InstantPreviewInput;
+    #endif
 
     /// <summary>
     /// Controls the HelloAR example.
@@ -57,7 +57,6 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         public GameObject SearchingForPlaneUI;
 
-
         /// <summary>
         /// The rotation in degrees need to apply to model when the Andy model is placed.
         /// </summary>
@@ -69,20 +68,12 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
 
-        //public static Mesh InputObj = new Mesh();
+        public Mesh InputObj;
 
         /// <summary>
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
         /// </summary>
         private bool m_IsQuitting = false;
-
-        // public Button m_Photo;
-
-        //private void TaskOnClick()
-        //{
-        //    //Output this to console when the Button is clicked
-        //    Debug.Log("You have clicked the button!");
-        //}
 
         // Load Obj code from github https://github.com/google-ar/arcore-unity-sdk/issues/144
         //private GameObject render3DObject()
@@ -112,13 +103,6 @@ namespace GoogleARCore.Examples.HelloAR
         //    return objectInstance;
         //}
         // ------- end github code ---------
-
-        //public void Start()
-        //{
-        //    string path = Application.persistentDataPath + "Input.obj";
-        //    Mesh InputObj = new Mesh();
-        //    InputObj = ObjImporter.ImportFile(path);
-        //}
 
         /// <summary>
         /// The Unity Update() method.
@@ -173,19 +157,19 @@ namespace GoogleARCore.Examples.HelloAR
                  // back of the plane, if it is, no need to create the anchor.
                  if ((hit.Trackable is DetectedPlane) &&
                      Vector3.Dot(FirstPersonCamera.transform.position - hit.Pose.position,
-                         hit.Pose.rotation * Vector3.up) < 0)
+                     hit.Pose.rotation * Vector3.up) < 0)
                  {
                      Debug.Log("Hit at back of the current DetectedPlane");
                  }
                  else
                  {
                     // Instantiate Andy model at the hit pose.
-                    string path = Application.persistentDataPath + "Input.obj";
                     var InputObject = Instantiate(Resources.Load("chair"), hit.Pose.position, hit.Pose.rotation) as GameObject;
                     InputObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
                     InputObject.transform.rotation = Quaternion.Euler(0f, 0f, 270f);
 
-                    //Mesh InputObj = new Mesh();
+                    //string path = Application.persistentDataPath + "Input.obj";
+                    //InputObj = new Mesh();
                     //InputObj = ObjImporter.ImportFile(path);
                     //var InputObject = Instantiate(Application.persistentDataPath + "Input.obj"), hit.Pose.position, hit.Pose.rotation);
 
