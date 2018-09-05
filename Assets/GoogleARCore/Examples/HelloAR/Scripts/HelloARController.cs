@@ -50,7 +50,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// A model to place when a raycast from a user touch hits a plane.
         /// </summary>
         public GameObject AndyAndroidPrefab;
-        public GameObject InputPrefab = null;
+        public GameObject InputPrefab;
+        public int index;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -68,7 +69,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
 
-        public Mesh InputObj;
+        //public Mesh InputObj;
 
         /// <summary>
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
@@ -161,31 +162,60 @@ namespace GoogleARCore.Examples.HelloAR
                  {
                      Debug.Log("Hit at back of the current DetectedPlane");
                  }
-                 else
-                 {
+                else
+                {
                     // Instantiate Andy model at the hit pose.
-                    var InputObject = Instantiate(Resources.Load("chair"), hit.Pose.position, hit.Pose.rotation) as GameObject;
+                    var InputObject = Instantiate(Resources.Load("chair_" + index), hit.Pose.position, hit.Pose.rotation) as GameObject;
+
                     InputObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-                    InputObject.transform.rotation = Quaternion.Euler(0f, 0f, 270f);
+                    InputObject.transform.Translate(new Vector3(0f, -0.3f, 0f));
+                    InputObject.transform.localRotation = Quaternion.Euler(0f, -17f, 90f);
+                    //InputObject.transform.localPosition = new Vector3(0.696f, -0.3f, -0.78f);
 
-                    //string path = Application.persistentDataPath + "Input.obj";
-                    //InputObj = new Mesh();
-                    //InputObj = ObjImporter.ImportFile(path);
-                    //var InputObject = Instantiate(Application.persistentDataPath + "Input.obj"), hit.Pose.position, hit.Pose.rotation);
+                    // online solution
+                    //                    var directoryPath = Application.persistentDataPath + "/Cache Folder/"
+                    //System.IO.Directory.Create(directoryPath);
+                    //// Load png file bytes
+                    //var fileBytes = System.IO.File.ReadAllBytes(directoryPath + "picture.png");
 
-                     // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                     //andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
-                    //InputObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+                    // CV Lab solution
+                    //string path = Application.persistentDataPath + "chair.obj";
+                    ////string path = "Assets/Resources/chair.obj";
+                    //InputPrefab = new GameObject();
+                    //LoadOBJ(InputPrefab, path);
+                    //Debug.Log("LoadOBJ Complete");
+                    //var InputObject = Instantiate(InputPrefab, hit.Pose.position, hit.Pose.rotation) as GameObject;
 
-                     // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
-                     // world evolves.
-                     var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                    // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
+                    //andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
+                    InputObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
-                     // Make Andy model a child of the anchor.
-                     //andyObject.transform.parent = anchor.transform;
+                    // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+                    // world evolves.
+                    var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+
+                    // Make Andy model a child of the anchor.
+                    //andyObject.transform.parent = anchor.transform;
                     InputObject.transform.parent = anchor.transform;
-                 }
-             }
+
+                    index = index < 3 ? index + 1 : 0;
+                }
+            }
+        }
+
+        private void LoadOBJ(GameObject obj, string filePath)
+        {
+            Mesh holderMesh = new Mesh();
+            ObjImporter newMesh = new ObjImporter();
+            holderMesh = newMesh.ImportFile(filePath);
+
+            MeshFilter filter = obj.AddComponent<MeshFilter>();
+            filter.mesh = holderMesh;
+
+            MeshRenderer renderer = obj.AddComponent<MeshRenderer>();
+
+            //Material defaultMat = new Material(Shader.Find("Standard"));
+            //renderer.material = defaultMat;
         }
 
         /// <summary>

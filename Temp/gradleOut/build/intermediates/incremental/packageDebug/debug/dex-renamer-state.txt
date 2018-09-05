@@ -1,4 +1,4 @@
-#Thu Aug 23 13:43:16 CST 2018
+#Wed Sep 05 17:14:20 CST 2018
 base.0=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
