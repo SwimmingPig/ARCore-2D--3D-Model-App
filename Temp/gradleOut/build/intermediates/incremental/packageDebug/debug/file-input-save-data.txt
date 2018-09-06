@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Sep 06 16:29:09 CST 2018
+#Thu Sep 06 16:44:42 CST 2018
 2.path=bin/Data/Managed/UnityEngine.SubstanceModule.dll
 14.set=ASSET
 107.baseType=DIRECTORY

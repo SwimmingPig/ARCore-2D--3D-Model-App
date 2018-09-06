@@ -170,7 +170,7 @@ namespace GoogleARCore.Examples.HelloAR
 
                     InputObject.transform.Translate(new Vector3(0.5f, -0.45f, 1.2f));
                     InputObject.transform.localScale = new Vector3(0.013f, 0.013f, 0.013f);
-                    InputObject.transform.localRotation = Quaternion.Euler(0f, -18f, 90f);
+                    InputObject.transform.localRotation = Quaternion.Euler(0f, -22f, 90f);
                     //InputObject.transform.localPosition = new Vector3(0.696f, -0.3f, -0.78f);
 
                     // online solution
