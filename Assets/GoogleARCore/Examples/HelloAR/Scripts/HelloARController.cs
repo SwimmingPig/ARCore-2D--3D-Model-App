@@ -164,13 +164,13 @@ namespace GoogleARCore.Examples.HelloAR
                  }
                 else
                 {
-                    index = index < 4 ? index + 1 : 0;
+                    index = index < 4 ? index + 1 : 1;
                     // Instantiate Andy model at the hit pose.
                     var InputObject = Instantiate(Resources.Load("chair_" + index), hit.Pose.position, hit.Pose.rotation) as GameObject;
 
-                    InputObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-                    InputObject.transform.Translate(new Vector3(0f, -0.3f, 0f));
-                    InputObject.transform.localRotation = Quaternion.Euler(0f, -17f, 90f);
+                    InputObject.transform.Translate(new Vector3(0.5f, -0.45f, 1.2f));
+                    InputObject.transform.localScale = new Vector3(0.013f, 0.013f, 0.013f);
+                    InputObject.transform.localRotation = Quaternion.Euler(0f, -18f, 90f);
                     //InputObject.transform.localPosition = new Vector3(0.696f, -0.3f, -0.78f);
 
                     // online solution
