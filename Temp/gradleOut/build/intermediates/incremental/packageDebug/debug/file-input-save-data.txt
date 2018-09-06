@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Sep 05 17:14:20 CST 2018
+#Thu Sep 06 15:09:24 CST 2018
 2.path=bin/Data/Managed/UnityEngine.SubstanceModule.dll
 14.set=ASSET
 107.baseType=DIRECTORY
@@ -168,14 +168,14 @@
 76.set=ASSET
 111.baseType=DIRECTORY
 48.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
-18.path=bin/Data/Managed/UnityEngine.VehiclesModule.dll.mdb
+18.path=bin/Data/9f4e6b7eec3ce48cc989c17cb3770661
 23.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 37.set=ASSET
 75.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 45.path=bin/Data/Managed/UnityEngine.UnityAnalyticsModule.dll
 50.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 97.path=bin/Data/Managed/UnityEngine.ScreenCaptureModule.dll
-20.path=bin/Data/Managed/UnityEngine.IMGUIModule.dll.mdb
+20.path=bin/Data/Managed/System.dll
 83.set=ASSET
 8.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 72.path=bin/Data/Managed/UnityEngine.Timeline.dll.mdb
@@ -224,7 +224,7 @@
 24.baseType=DIRECTORY
 70.baseType=DIRECTORY
 49.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
-19.path=bin/Data/Managed/System.dll
+19.path=bin/Data/Managed/UnityEngine.VehiclesModule.dll.mdb
 24.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 47.set=ASSET
 156.baseType=DIRECTORY
@@ -232,7 +232,7 @@
 46.path=bin/Data/Managed/UnityEngine.PerformanceReportingModule.dll
 51.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 98.path=bin/Data/Managed/UnityEngine.SpriteShapeModule.dll
-21.path=bin/Data/Managed/UnityEngine.BaselibModule.dll
+21.path=bin/Data/Managed/UnityEngine.IMGUIModule.dll.mdb
 93.set=ASSET
 9.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 73.path=bin/Data/Managed/UnityEngine.UIElementsModule.dll.mdb
@@ -294,7 +294,7 @@
 47.path=bin/Data/Managed/UnityEngine.LocalizationModule.dll
 52.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 99.path=bin/Data/Managed/UnityEngine.PhysicsModule.dll
-22.path=bin/Data/Managed/UnityEngine.AccessibilityModule.dll
+22.path=bin/Data/Managed/UnityEngine.BaselibModule.dll
 74.path=bin/Data/Managed/UnityEngine.ARModule.dll.mdb
 18.set=ASSET
 52.baseType=DIRECTORY
@@ -351,7 +351,7 @@
 78.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 48.path=bin/Data/Managed/UnityEngine.VideoModule.dll.mdb
 53.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
-23.path=bin/Data/Managed/UnityEngine.SubstanceModule.dll.mdb
+23.path=bin/Data/Managed/UnityEngine.AccessibilityModule.dll
 75.path=bin/Data/Managed/UnityEngine.WindModule.dll
 28.set=NATIVE_RESOURCE
 80.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
@@ -412,7 +412,7 @@ count=171
 79.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 49.path=bin/Data/Managed/UnityEngine.TextRenderingModule.dll.mdb
 54.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
-24.path=bin/Data/Managed/UnityEngine.TerrainModule.dll
+24.path=bin/Data/Managed/UnityEngine.SubstanceModule.dll.mdb
 51.baseType=DIRECTORY
 38.set=ASSET
 76.path=bin/Data/Managed/UnityEngine.StandardEvents.dll.mdb
@@ -474,7 +474,7 @@ count=171
 28.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/transforms/mergeJniLibs/debug/0
 87.set=ASSET
 55.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
-25.path=bin/Data/ed8dee05cdc914f558c9786afdb0ef3b
+25.path=bin/Data/Managed/UnityEngine.TerrainModule.dll
 30.base=/Users/andychu/Desktop/ARCore-2D--3D-Model-App/Temp/gradleOut/build/intermediates/assets/debug
 103.baseType=DIRECTORY
 48.set=ASSET

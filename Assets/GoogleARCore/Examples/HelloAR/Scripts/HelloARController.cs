@@ -164,6 +164,7 @@ namespace GoogleARCore.Examples.HelloAR
                  }
                 else
                 {
+                    index = index < 4 ? index + 1 : 0;
                     // Instantiate Andy model at the hit pose.
                     var InputObject = Instantiate(Resources.Load("chair_" + index), hit.Pose.position, hit.Pose.rotation) as GameObject;
 
@@ -198,7 +199,7 @@ namespace GoogleARCore.Examples.HelloAR
                     //andyObject.transform.parent = anchor.transform;
                     InputObject.transform.parent = anchor.transform;
 
-                    index = index < 3 ? index + 1 : 0;
+
                 }
             }
         }

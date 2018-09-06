@@ -3,14 +3,14 @@ guid: 44303d4c84fcf45dab007a2c9f56e54d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: chair_2
+    100000: chair_1
     100002: //RootNode
-    400000: chair_2
+    400000: chair_1
     400002: //RootNode
     2100000: DefaultMaterial
-    2300000: chair_2
-    3300000: chair_2
-    4300000: chair_2
+    2300000: chair_1
+    3300000: chair_1
+    4300000: chair_1
   externalObjects: {}
   materials:
     importMaterials: 1
