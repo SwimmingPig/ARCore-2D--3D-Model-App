@@ -7,10 +7,15 @@ public class PhotoButton : MonoBehaviour {
     public GameObject Cube;
 	public void click() {
         //Debug.Log("Photot button pressed");
+
         captureScreenshot();
         StartCoroutine(captureScreenshot());
+
         //Cube = OBJLoader.LoadOBJFile(Application.persistentDataPath + "Input.obj");
         //var andyObject = Instantiate(AndyAndroidPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
+
+        //FtpUploader uploader = new FtpUploader();
+        //uploader.UploadFile();
 
     }
 
@@ -19,7 +24,7 @@ public class PhotoButton : MonoBehaviour {
         yield return new WaitForEndOfFrame();
 
         //string path = Application.persistentDataPath + "Screenshots" + Screen.width + "X" + Screen.height + "" + ".png";
-        string path = Application.persistentDataPath + "Input.png";
+        string path = Application.persistentDataPath + "/Input.png";
 
         Texture2D screenImage = new Texture2D(Screen.width, Screen.height);
         //Get Image from screen
@@ -30,6 +35,9 @@ public class PhotoButton : MonoBehaviour {
 
         //Save image to file
         System.IO.File.WriteAllBytes(path, imageBytes);
+
+        FtpUploader uploader = new FtpUploader();
+        uploader.UploadFile(imageBytes);
     }
 }
 
