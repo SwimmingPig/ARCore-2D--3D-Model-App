@@ -14,9 +14,6 @@ public class PhotoButton : MonoBehaviour {
         //Cube = OBJLoader.LoadOBJFile(Application.persistentDataPath + "Input.obj");
         //var andyObject = Instantiate(AndyAndroidPrefab, Vector3.zero, Quaternion.Euler(0, 90, 0));
 
-        //FtpUploader uploader = new FtpUploader();
-        //uploader.UploadFile();
-
     }
 
     IEnumerator captureScreenshot()

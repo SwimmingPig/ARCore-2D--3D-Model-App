@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{721DF084-EFD7-F7E0-86D0-DC9D3DD4205C}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleARCore/Examples/HelloAR/Scripts/HelloARController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleARCore/Examples/HelloAR/Scripts/FtpUploader.cs">
     <Files>
-      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/FtpUploader.cs" Line="35" Column="6" />
-      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/PhotoButton.cs" Line="20" Column="9" />
+      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/FtpUploader.cs" Line="42" Column="36" />
+      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/PhotoButton.cs" Line="38" Column="6" />
       <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/ObjImportor.cs" Line="1" Column="1" />
-      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/HelloARController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GoogleARCore/Examples/HelloAR/Scripts/HelloARController.cs" Line="211" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

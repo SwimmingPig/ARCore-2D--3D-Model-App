@@ -6,18 +6,18 @@ using System.IO;
 
 public class FtpUploader : MonoBehaviour
 {
-    //public string FTPHost = "ftp://140.114.76.108";
-    //public string FTPUserName = "team1";
-    //public string FTPPassword = "y3Pkn";
-    public string FTPHost = "ftp://ftp.dlptest.com/";
-    public string FTPUserName = "dlpuser@dlptest.com";
-    public string FTPPassword = "e73jzTRTNqCN9PYAAjjn";
+    public string FTPHost = "ftp://140.114.76.108:2121/";
+    public string FTPUserName = "team1";
+    public string FTPPassword = "y3Pkn";
+    //public string FTPHost = "ftp://ftp.dlptest.com/";
+    //public string FTPUserName = "dlpuser@dlptest.com";
+    //public string FTPPassword = "e73jzTRTNqCN9PYAAjjn";
     public string FilePath;
 
     public void UploadFile(byte[] fileContents)
     {
         FilePath = Application.persistentDataPath + "/Input.png";
-        //Debug.Log("Path: " + FilePath);
+        Debug.Log("Upload Path: " + FilePath);
 
         // Get the object used to communicate with the server.
         FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTPHost + new FileInfo(FilePath).Name);
@@ -34,10 +34,11 @@ public class FtpUploader : MonoBehaviour
         //}
 
         request.ContentLength = fileContents.Length;
-
+        Debug.Log("Start Uploading");
         using (Stream requestStream = request.GetRequestStream())
         {
             requestStream.Write(fileContents, 0, fileContents.Length);
         }
+        Debug.Log("End Uploading");
     }
 }
